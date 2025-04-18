@@ -26,33 +26,37 @@ async function checkWeather(city) {
     
             if ( data.weather[0].main == "Clouds"){
                 card.style.backgroundImage = "url('cloudy.png')";
-                weather.style.marginTop = "10vh";
+                weather.style.marginTop = "25vh";
                 document.querySelector(".weather-name").innerText = "Cloudy";
             }
 
             else if ( data.weather[0].main == "Rain"){
                 card.style.backgroundImage = "url('rain.png')";
+                weather.style.marginTop = "25vh";
                 document.querySelector(".weather-name").innerText = "Rainy";
             }
 
             else if ( data.weather[0].main == "Mist"){
                 card.style.backgroundImage = "url('mist.png')";
+                weather.style.marginTop = "25vh";
                 document.querySelector(".weather-name").innerText = "Mist";
             }
 
             else if ( data.weather[0].main == "Snow"){
                 card.style.backgroundImage = "url('snow.png')";
+                weather.style.marginTop = "25vh";
                 document.querySelector(".weather-name").innerText = "Snowy";
             }
 
             else if ( data.weather[0].main == "Drizzle"){
                 card.style.backgroundImage = "url('drizzle.png')";
+                weather.style.marginTop = "25vh";
                 document.querySelector(".weather-name").innerText = "Drizzling";
             }
 
             else if ( data.weather[0].main == "Clear"){
                 card.style.backgroundImage = "url('sunny.png')";
-                weather.style.marginTop = "5vw";
+                weather.style.marginTop = "10vh";
                 document.querySelector(".weather-name").innerText = "Clear";
             }
             error.style.display = "none";
