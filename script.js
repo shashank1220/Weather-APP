@@ -26,7 +26,7 @@ async function checkWeather(city) {
     
             if ( data.weather[0].main == "Clouds"){
                 card.style.backgroundImage = "url('cloudy.png')";
-                weather.style.marginTop = "10vw";
+                weather.style.marginTop = "10vh";
                 document.querySelector(".weather-name").innerText = "Cloudy";
             }
 
