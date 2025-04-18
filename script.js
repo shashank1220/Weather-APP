@@ -8,7 +8,6 @@ const card = document.querySelector(".card");
 
 const weather = document.querySelector(".weather");
 const error = document.querySelector(".error");
-const weatherIcon = document.querySelector(".weather-icon");
 
 async function checkWeather(city) {
     const response = await fetch (apiUrl + city +`&appid=${apiKey}`);
@@ -26,39 +25,40 @@ async function checkWeather(city) {
             document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
     
             if ( data.weather[0].main == "Clouds"){
-                weatherIcon.src = "clouds.png";
-                card.style.background = "#808080";
+                card.style.backgroundImage = "url('cloudy.png')";
+                weather.style.marginTop = "10vw";
                 document.querySelector(".weather-name").innerText = "Cloudy";
             }
+
             else if ( data.weather[0].main == "Rain"){
-                weatherIcon.src = "rain.png";
-                card.style.background = "#28628f";
+                card.style.backgroundImage = "url('rain.png')";
                 document.querySelector(".weather-name").innerText = "Rainy";
             }
+
             else if ( data.weather[0].main == "Mist"){
-                weatherIcon.src = "mist.png";
-                card.style.background = "#a5c0c2";
+                card.style.backgroundImage = "url('mist.png')";
                 document.querySelector(".weather-name").innerText = "Mist";
             }
+
             else if ( data.weather[0].main == "Snow"){
-                weatherIcon.src = "snow.png";
-                card.style.background = "#7dcef7";
+                card.style.backgroundImage = "url('snow.png')";
                 document.querySelector(".weather-name").innerText = "Snowy";
             }
+
             else if ( data.weather[0].main == "Drizzle"){
-                weatherIcon.src = "drizzle.png";
-                card.style.background = "#8dafac";
-                document.querySelector(".weather-name").innerText = "Dizzling";
+                card.style.backgroundImage = "url('drizzle.png')";
+                document.querySelector(".weather-name").innerText = "Drizzling";
             }
+
             else if ( data.weather[0].main == "Clear"){
-                weatherIcon.src = "clear.png";
-                card.style.background = "#009bfc";
+                card.style.backgroundImage = "url('sunny.png')";
+                weather.style.marginTop = "5vw";
                 document.querySelector(".weather-name").innerText = "Clear";
             }
             error.style.display = "none";
             weather.style.display = "block";
         }
-}
+};
 
 searchBtn.addEventListener("click", () => {
     checkWeather(searchBox.value);
